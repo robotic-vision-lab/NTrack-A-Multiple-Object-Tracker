@@ -1,0 +1,11 @@
+lap
+pycocotolls
+opencv
+tqdm
+tensorpack
+
+scikit-image
+scikit-learn
+filterpy
+pysyaml
+motmetrics
