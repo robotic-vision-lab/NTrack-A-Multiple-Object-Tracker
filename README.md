@@ -1,4 +1,6 @@
-# NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting
+## NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting
+
+### Overview
 
 ### [Project Page]( https://robotic-vision-lab.github.io/ntrack/) | [Presentation](https://www.youtube.com/watch?v=VTUNa2EoG0U) | [Data]()
 In the paper we introduced NTrack, a new multiple object tracking framework that relies on
@@ -7,7 +9,7 @@ optical flow computation and particle filtering. NTrack establishs connections b
 detections and existing tracks through data association using both direct observations and
 indirect cues. These associations are then combined to create an updated observation.
 <div align=center>
-    <img src='img/ntrack_pipeline.PNG'/>
+    <img src='images/ntrack_pipeline.png'/>
 </div>
 
 
