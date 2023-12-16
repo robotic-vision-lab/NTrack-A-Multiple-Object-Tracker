@@ -1,6 +1,6 @@
 # This file removes bbox based on provided margin
 
-import  numpy as np
+import numpy as np
 import os
 from src.utils import io_util
 
@@ -20,7 +20,6 @@ def remove_bbox_from_tracker_output(w_margin, h_margin=0):
             io_util.save_list(bboxs, os.path.join(tracker_output_base_dir, t, 'data1'), seq)
 
 def remove_bbox_from_gt(w_margin, h_margin=0):
-
     sequences = os.listdir(gt_base_dir) #\vid09_02\gt
 
     for seq in sequences:

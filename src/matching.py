@@ -3,7 +3,6 @@ import numpy as np
 import scipy
 import lap
 from scipy.spatial.distance import cdist
-
 from cython_bbox import bbox_overlaps as bbox_ious
 import kalman_filter
 import time
@@ -24,7 +23,6 @@ def merge_matches(m1, m2, shape):
 
     return match, unmatched_O, unmatched_Q
 
-
 def _indices_to_matches(cost_matrix, indices, thresh):
     matched_cost = cost_matrix[tuple(zip(*indices))]
     matched_mask = (matched_cost <= thresh)
@@ -34,7 +32,6 @@ def _indices_to_matches(cost_matrix, indices, thresh):
     unmatched_b = tuple(set(range(cost_matrix.shape[1])) - set(matches[:, 1]))
 
     return matches, unmatched_a, unmatched_b
-
 
 def linear_assignment(cost_matrix, thresh):
     if cost_matrix.size == 0:
@@ -48,7 +45,6 @@ def linear_assignment(cost_matrix, thresh):
     unmatched_b = np.where(y < 0)[0]
     matches = np.asarray(matches)
     return matches, unmatched_a, unmatched_b
-
 
 def ious(atlbrs, btlbrs):
     """
@@ -68,7 +64,6 @@ def ious(atlbrs, btlbrs):
     )
 
     return ious
-
 
 def iou_distance(atracks, btracks, use_pf):
     """
@@ -135,7 +130,6 @@ def embedding_distance(tracks, detections, metric='cosine'):
     cost_matrix = np.maximum(0.0, cdist(track_features, det_features, metric))  # Nomalized features
     return cost_matrix
 
-
 def gate_cost_matrix(kf, cost_matrix, tracks, detections, only_position=False):
     if cost_matrix.size == 0:
         return cost_matrix
@@ -147,7 +141,6 @@ def gate_cost_matrix(kf, cost_matrix, tracks, detections, only_position=False):
             track.mean, track.covariance, measurements, only_position)
         cost_matrix[row, gating_distance > gating_threshold] = np.inf
     return cost_matrix
-
 
 def fuse_motion(kf, cost_matrix, tracks, detections, only_position=False, lambda_=0.98):
     if cost_matrix.size == 0:
@@ -162,7 +155,6 @@ def fuse_motion(kf, cost_matrix, tracks, detections, only_position=False, lambda
         cost_matrix[row] = lambda_ * cost_matrix[row] + (1 - lambda_) * gating_distance
     return cost_matrix
 
-
 def fuse_iou(cost_matrix, tracks, detections):
     if cost_matrix.size == 0:
         return cost_matrix
@@ -175,7 +167,6 @@ def fuse_iou(cost_matrix, tracks, detections):
     #fuse_sim = fuse_sim * (1 + det_scores) / 2
     fuse_cost = 1 - fuse_sim
     return fuse_cost
-
 
 def fuse_score(cost_matrix, detections):
     if cost_matrix.size == 0:

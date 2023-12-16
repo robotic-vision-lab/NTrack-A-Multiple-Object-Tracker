@@ -9,10 +9,8 @@ import cv2 as cv
 from kalman_box_tracker import KalmanBoxTracker
 from scipy.stats import multivariate_normal
 
-
 def convert_wh2scaleaspect(w, h):
     return w*h, w/h
-
 
 class ParticleFilterTracker(object):
     count = 0
@@ -183,7 +181,3 @@ class ParticleFilterTracker(object):
         cv.circle(layer, self.state_center.astype(int), 10 , color , -1)
         for p in self.particles:
             cv.circle(layer, p.astype(int), 1, color, -1 )
-
-
-
-

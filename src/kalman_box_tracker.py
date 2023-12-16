@@ -2,6 +2,7 @@ from filterpy.kalman import KalmanFilter
 from filterpy.common import Saver
 import numpy as np
 from utils import util #
+
 class KalmanBoxTracker(object):
     """
     This class represents the internal state of individual tracked objects observed as bbox.
@@ -75,7 +76,6 @@ class KalmanBoxTracker(object):
         #                                  bbox)
         # return
 
-
     def predict(self):
         """
         Advances the state vector and returns the predicted bounding box estimate.
@@ -104,4 +104,3 @@ class KalmanBoxTracker(object):
 
     def add_track_history(self, matched, frame_id):
         self.track_history[frame_id] = (np.squeeze(self.get_state_z()[:4]), matched )
-

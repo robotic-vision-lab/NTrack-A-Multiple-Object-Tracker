@@ -10,12 +10,12 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
-
 dataDir='./COCOdataset2017'
 dataType='val'
 annFile='/Users/mdahmedalmuzaddid/Data/cotton/train.json'
 annFile = 'D:\OneDrive - University of Texas at Arlington\PhD\RVL\cotton\data\Dataset_deeplabel\deeplabel_work\out_c0009\train.json'
 annFile = '/Users/mdahmedalmuzaddid/OneDrive - University of Texas at Arlington/PhD/RVL/cotton/data/Dataset_deeplabel/deeplabel_work/out_c0009/train.json'
+
 def test_library(annFile):
     # Initialize the COCO api for instance annotations
     coco=COCO(annFile)
@@ -53,8 +53,6 @@ def coco2det(annFile):
         #print(ann['image_id'], -1, ann['bbox'], 1)
     return det
 
-
-
 def frameid_to_imageid(annFile):
     '''
     return image file dictionary
@@ -89,23 +87,17 @@ def show_img():
 
     #plt.title(seq + ' Tracked Targets')
 
-
     # import matplotlib.pyplot as plt
     # import matplotlib.image as mpimg
     # img = mpimg.imread(os.path.join('mot_cotton', "train", "vid1" , "cotton_000002.jpg"))
     # imgplot = plt.imshow(img)
     #plt.show()
 
-
-
 def preapare_and_save_for_tracking(vid_id):
-
     dettection = coco2det(annFile)
     save_as_csv(dettection, vid_id+'.csv')
     frm2img = frameid_to_imageid(annFile)
     np.save(vid_id+".npy", frm2img)
 
-
 preapare_and_save_for_tracking(vid_id = "C009")
 #show_img()
-#

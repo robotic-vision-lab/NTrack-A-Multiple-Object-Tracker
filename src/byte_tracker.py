@@ -62,7 +62,6 @@ class STrack(BaseTrack):
             flow = opt_util.get_flow_summary(dense_flow, prev_pos)
             bbox = pf_tracker.predict(flow)
 
-
     def activate(self, kalman_filter, frame_id):
         """Start a new tracklet"""
         self.kalman_filter = kalman_filter
@@ -165,7 +164,6 @@ class STrack(BaseTrack):
     def __repr__(self):
         return 'OT_{}_({}-{})'.format(self.track_id, self.start_frame, self.end_frame)
 
-
 class BYTETracker(object):
     def __init__(self, args, frame_rate=30, use_pf=False):
         self.tracked_stracks = []  # type: list[STrack]
@@ -183,10 +181,8 @@ class BYTETracker(object):
         self.use_pf = use_pf
         BaseTrack.init_id()
 
-
     def init_opticalflow_manager(self, init_frame):
         self.opticalflow_manager = opt_util.Opticalflow_Manager(init_frame)
-
 
     def update(self, output_results, img_info, img_size, frame=None):
         self.frame_id += 1
@@ -338,7 +334,6 @@ class BYTETracker(object):
          #   print(l_track.track_id, end='\t')
             l_track.particle_filter.update_dormant(loc, var)
 
-
 def joint_stracks(tlista, tlistb):
     exists = {}
     res = []
@@ -352,7 +347,6 @@ def joint_stracks(tlista, tlistb):
             res.append(t)
     return res
 
-
 def sub_stracks(tlista, tlistb):
     stracks = {}
     for t in tlista:
@@ -362,7 +356,6 @@ def sub_stracks(tlista, tlistb):
         if stracks.get(tid, 0):
             del stracks[tid]
     return list(stracks.values())
-
 
 def remove_duplicate_stracks(stracksa, stracksb, use_pf):
     pdist = matching.iou_distance(stracksa, stracksb, use_pf)
@@ -394,7 +387,6 @@ def update_nn_for_matched_tracks( nn, candidate_neigh_idx, strack_pool, frm_idx)
             else:
                 strack_pool[trk_idx].neighbors[nn_id] = [nn_info]
 
-
 def update_neighbors(matched, strack_pool,  frm_idx, n_neighbor):
     # update nearest neighbor of matched tracks
     if len(matched) < 2 :return
@@ -412,6 +404,3 @@ def update_neighbors(matched, strack_pool,  frm_idx, n_neighbor):
     # nn = np.asarray(nn)
 
     update_nn_for_matched_tracks(nn, candidate_neigh_idx, strack_pool, frm_idx)
-
-
-

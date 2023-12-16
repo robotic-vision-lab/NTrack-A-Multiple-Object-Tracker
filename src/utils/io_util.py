@@ -6,7 +6,6 @@ from collections import  defaultdict, OrderedDict
 
 import utils.util as util
 
-
 def get_frame_dict(num_frm = 'all'):
     params = util.params
     frameseq2imgfile = params['dir_location']['frameseq2imgfile']
@@ -22,7 +21,6 @@ def get_frame_dict(num_frm = 'all'):
         frames[frame_idx] = {'img_name':img_name, 'img':img}
 
     return frames
-
 
 def get_detection_by_frame(num_frm = 'all'):
     params = util.params
@@ -41,7 +39,6 @@ def get_detection_by_frame(num_frm = 'all'):
         detection_by_frmidx[frame_idx].append( [*bbox, conf])
 
     return detection_by_frmidx
-
 
 def get_detection_with_id_by_frame(num_frm = 'all'):
     det_dir = 'src/utils/C009.txt'
@@ -62,7 +59,6 @@ def get_detection_with_id_by_frame(num_frm = 'all'):
         detection_by_frmidx[frame_idx][obj_id].append([*bbox, conf])
 
     return detection_by_frmidx
-
 
 def save_list(l, f_dir, f_name):
     if not os.path.isdir(f_dir): os.mkdir(f_dir)

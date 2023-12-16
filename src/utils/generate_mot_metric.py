@@ -19,7 +19,6 @@ def update_metric(metric_acc, gt_id, gt_box, match_id, match_bb):
     dis_mat = mm.distances.iou_matrix(gt_box, match_bb, max_iou=0.65)
     metric_acc.update(gt_id, match_id, dis_mat)
 
-
 def generate_results(seq_names, all_metric):
     mh = mm.metrics.create()
     summary = mh.compute_many(
@@ -38,9 +37,7 @@ def generate_results(seq_names, all_metric):
     with open(os.path.join('..','..', 'output', 'deepsort_result.txt'), 'w') as f:
         print(strsummary, file= f)
 
-
 def rearrange(dat):
-
     n_frm = int(np.max(dat[:, 0]))
     bbox_by_frm = [ {'obj_id':[], 'bbox':[]} for _ in range(n_frm+1)]
     for d in dat:
@@ -50,8 +47,6 @@ def rearrange(dat):
         bbox_by_frm[frm_id]['obj_id'].append(obj_id)
         bbox_by_frm[frm_id]['bbox'].append(bbox)
     return bbox_by_frm
-
-
 
 def generate():
     gt_basedir = r'C:\Users\Ahmed\OneDrive - University of Texas at Arlington\PhD\RVL\cotton\data\MOT_format_for_transtrack\train'

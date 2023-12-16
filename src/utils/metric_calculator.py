@@ -2,7 +2,6 @@ import motmetrics as mm
 import numpy as np
 
 def update_metric(metric_acc, gt_id, gt_box, match_id, match_bb, w_margin):
-
     ''''Refine gt and ht - remove boxes which are in margin'''
     l = len(gt_id)
     for i in range(l-1, -1, -1):

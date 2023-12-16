@@ -3,7 +3,6 @@ import numpy as np
 from utils import util
 color = np.random.randint(0,255,(100,3))
 
-
 def get_feature(img):
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     mask = np.zeros_like(gray)
@@ -16,7 +15,6 @@ def get_feature(img):
         cv.circle(img, (x, y), 10, 255, -1)
     cv.rectangle(img,(1650, 1200 ),(1800, 1350), (0, 255, 0), 3)  # (1780, 650),(2060,920)
     return img
-
 
 class Opticalflow_Manager:
     def __init__(self, init_frame):
@@ -64,7 +62,6 @@ class Opticalflow_Manager:
 
     def get_dense_flow(self, frame_gray):
         flow = cv.calcOpticalFlowFarneback(self.old_gray, frame_gray,  None, 0.5, 6, 25, 3, 5, 1.2, 0)
-
 
 def get_flow_summary(denseflow, roi, window = (1,1)):
     '''

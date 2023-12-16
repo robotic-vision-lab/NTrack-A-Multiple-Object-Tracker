@@ -4,8 +4,6 @@ import sys
 from tqdm.notebook import tqdm
 import torch
 import matplotlib.pyplot as plt
-
-
 import transforms as T
 from cotton_data import MOTCottonDetect
 
@@ -14,8 +12,6 @@ output_dir = "../../output/faster_rcnn_fpn/faster_rcnn_fpn_training_mot_17_split
 
 if not osp.exists(output_dir):
     os.makedirs(output_dir)
-
-
 
 def plot(img, boxes):
     fig, ax = plt.subplots(1, dpi=96)
@@ -38,10 +34,8 @@ def plot(img, boxes):
     plt.axis('off')
     plt.show()
 
-
 import torchvision
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
-
 
 def get_detection_model(num_classes):
     # load an instance segmentation model pre-trained on COCO
@@ -134,7 +128,6 @@ optimizer = torch.optim.SGD(params, lr=0.00001,
 lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
                                                step_size=10,
                                                gamma=0.1)
-
 
 def evaluate_and_write_result_files(model, data_loader):
     print(f'EVAL {data_loader.dataset}')

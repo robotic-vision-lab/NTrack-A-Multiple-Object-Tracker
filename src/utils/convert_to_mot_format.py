@@ -2,6 +2,7 @@ import glob
 import os
 from pycocotools.coco import COCO
 from collections import defaultdict
+
 #basedir = "D:\OneDrive - University of Texas at Arlington\PhD\RVL\cotton\data\MOT_format_for_transtrack\\train"
 basedir = r'C:\Users\Ahmed\OneDrive - University of Texas at Arlington\PhD\RVL\cotton\data\MOT_format_for_transtrack\train'
 basedir = r'C:\Users\Ahmed\OneDrive - University of Texas at Arlington\PhD\RVL\cotton\data\MOT_format_for_transtrack\New_data\train'
@@ -11,8 +12,6 @@ split_list = {'vid09':[ (919,1218), (1425,1725), (1825,2125)],
               'vid23': [(1137,1578), (2190,2490), (2726,3300), (3564,4164), (6840,7440 )],
               'vid14':[(825,1427),  (1560,1908)]
               }
-
-
 
 #TODO:  add img1 directory for writing images
 def distribute_into_dir(rename_img_frm_idx1 ):
@@ -37,7 +36,6 @@ def distribute_into_dir(rename_img_frm_idx1 ):
                 img_files = sorted(os.listdir(split_dir))
                 for fidx, f in img_files:
                     os.rename(os.path.join(basedir, split_dir, f), os.path.join(basedir, split_dir, f'{fidx:04d}.jpg'))
-
 
 import csv
 def save_list(l, f_dir, f_name):
@@ -95,9 +93,6 @@ def rename_file_starting_idx1(basedir):
             for fidx, f in enumerate(img_files ,1):
                 os.rename(os.path.join(split_img_dir, f),
                           os.path.join( split_img_dir, f'{fidx:04d}.jpg'))
-
-
-
 
 def convert_coco_to_mot():
     annotaion_dir = os.path.join(os.path.split(basedir)[0], 'annotations')

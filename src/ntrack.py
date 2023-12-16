@@ -17,7 +17,6 @@ fourcc = cv.VideoWriter_fourcc(*'MJPG')
 video_writer = None
 video_dim =(1080, 720)
 
-
 def make_parser():
     parser = argparse.ArgumentParser("Test NTrack")
     parser.add_argument("--data_base_dir", help="Base directory to the data")
@@ -104,8 +103,6 @@ def do_track(args, seq, save_vid=False, use_pf=True):
     metric.populate_result(seq.seq_name, metric_acc)
 
     return [seq.seq_name, metric_acc, res]
-
-
 
 if __name__ == '__main__':
     args = make_parser().parse_args()

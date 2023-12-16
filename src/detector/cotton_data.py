@@ -242,7 +242,6 @@ class MOTCottonDetect(torch.utils.data.Dataset):
                 self._add_detection_gt(img, coco, annotation_file)
         return imgs
 
-
     def _add_detection_gt(self, img, coco, annotation_file):
         """
         Add 'boxes', 'class', 'is_crowd' of this image to the dict, used by detection.
@@ -405,7 +404,6 @@ class MOTCottonDetect(torch.utils.data.Dataset):
                 for d in v:
                     writer.writerow(d)
 
-
 class SegmentedObject:
     """
     Helper class for segmentation objects.
@@ -415,7 +413,6 @@ class SegmentedObject:
         self.class_id = class_id
         self.track_id = track_id
         self.full_bbox = full_bbox
-
 
 def load_mots_gt(path: str) -> dict:
     """Load MOTS ground truth from path."""
@@ -468,5 +465,3 @@ def load_mots_gt(path: str) -> dict:
             ))
 
     return objects_per_frame
-
-

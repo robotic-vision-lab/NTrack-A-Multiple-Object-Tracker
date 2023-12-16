@@ -8,7 +8,6 @@ fourcc = cv.VideoWriter_fourcc(*'DIVX')
 fourcc = cv.VideoWriter_fourcc(*'MJPG')
 video_dim =(1080, 720)
 
-
 def paste_layer(img, layer):
     gray_layer = cv.cvtColor(layer, cv.COLOR_BGR2GRAY)
     ret, mask = cv.threshold(gray_layer, 10, 255, cv.THRESH_BINARY)
@@ -16,7 +15,6 @@ def paste_layer(img, layer):
     img1_bg = cv.bitwise_and(img, img, mask=mask_inv)
     layer = cv.add(img1_bg, layer)
     return layer
-
 
 def draw_centers(bbox, layer):
     w = bbox[2] - bbox[0]
@@ -26,7 +24,6 @@ def draw_centers(bbox, layer):
     cv.circle(layer,(int(x),int(y)), 5, (0, 255, 255), 5)  #
 
     return layer
-
 
 def draw_rect_with_label(layer, d, label=None, color = None, label_pos='topleft'):
     if label is None:
@@ -52,14 +49,12 @@ def draw_rect_with_label(layer, d, label=None, color = None, label_pos='topleft'
                5)  # font stroke
     return layer
 
-
 def draw_predicted_bbox(layer, predicted_bboxs):
     predicted_bboxs = predicted_bboxs.astype(int)
     if len(predicted_bboxs)>0:
         for  bbox in predicted_bboxs:
             bbox_id = bbox[-1]
             draw_rect_with_label(layer, bbox, str(bbox_id), (225,255,0))
-
 
 def show_frame(frame, size = (1080, 720), window_name ='Frame', video_writer=None, frame_idx=-1):
     if frame_idx>=0:
@@ -71,7 +66,6 @@ def show_frame(frame, size = (1080, 720), window_name ='Frame', video_writer=Non
 
     if video_writer: video_writer.write(frame)
     return frame
-
 
 def show_tracks(trackers, frame):
     trk_to_draw ='all'
@@ -101,7 +95,6 @@ def show_tracks(trackers, frame):
         cv.imwrite('../../output/track_img.png', trk_img)
     cv.imshow("Tracks", trk_img)
 
-
 def draw_bboxs(layer, bboxs, color=(255,0,0)):
     for bbox_idx, bbox in enumerate(bboxs):
         layer = cv.rectangle(layer, (bbox[0], bbox[1]), (bbox[2], bbox[3]), color, thickness=5)
@@ -112,7 +105,6 @@ def draw_bboxs(layer, bboxs, color=(255,0,0)):
                    (0, 255, 0, 255),  # font color
                    5)  # font stroke
     return layer
-
 
 def draw_rect_debug(layer, d, label=None):
     layer = cv.rectangle(layer, (d[0], d[1]), (d[2], d[3]), (255,0,0), 10)
@@ -125,7 +117,6 @@ def draw_rect_debug(layer, d, label=None):
                (0, 255, 0, 255),  # font color
                5)  # font stroke
     return layer
-
 
 def show_output(img, gt_for_disp, matched_trk, unmatched_trk,
                 mask, flow_layer=None, flow_layer_new=None,

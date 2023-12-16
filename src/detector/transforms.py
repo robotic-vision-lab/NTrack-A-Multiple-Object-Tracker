@@ -1,8 +1,6 @@
 import random
 import torch
-
 from torchvision.transforms import functional as F
-
 
 def _flip_coco_person_keypoints(kps, width):
     flip_inds = [0, 2, 1, 4, 3, 6, 5, 8, 7, 10, 9, 12, 11, 14, 13, 16, 15]
@@ -13,7 +11,6 @@ def _flip_coco_person_keypoints(kps, width):
     flipped_data[inds] = 0
     return flipped_data
 
-
 class Compose(object):
     def __init__(self, transforms):
         self.transforms = transforms
@@ -22,7 +19,6 @@ class Compose(object):
         for t in self.transforms:
             image, target = t(image, target)
         return image, target
-
 
 class RandomHorizontalFlip(object):
     def __init__(self, prob):
@@ -42,7 +38,6 @@ class RandomHorizontalFlip(object):
                 keypoints = _flip_coco_person_keypoints(keypoints, width)
                 target["keypoints"] = keypoints
         return image, target
-
 
 class ToTensor(object):
     def __call__(self, image, target):

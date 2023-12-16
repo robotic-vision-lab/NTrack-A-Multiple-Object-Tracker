@@ -1,4 +1,3 @@
-
 import numpy as np
 import lap
 
@@ -11,7 +10,6 @@ def linear_assignment(cost_matrix):
         from scipy.optimize import linear_sum_assignment
         x, y = linear_sum_assignment(cost_matrix)
         return np.array(list(zip(x, y)))
-
 
 def iou_batch(bb_test, bb_gt):
     """
@@ -30,6 +28,7 @@ def iou_batch(bb_test, bb_gt):
     o = wh / ((bb_test[..., 2] - bb_test[..., 0]) * (bb_test[..., 3] - bb_test[..., 1])
               + (bb_gt[..., 2] - bb_gt[..., 0]) * (bb_gt[..., 3] - bb_gt[..., 1]) - wh)
     return(o)
+
 def associate_detections_to_trackers(params, detections,trackers,iou_threshold = 0.3):
     """
     Assigns detections to tracked object (both represented as bounding boxes)

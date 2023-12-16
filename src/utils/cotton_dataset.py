@@ -6,7 +6,6 @@ import numpy as np
 #from PIL import Image
 from skimage import io
 
-
 class CottonDataset():
     """A Wrapper for the MOT_Sequence class to return multiple sequences."""
 
@@ -36,7 +35,6 @@ class CottonDataset():
 
     def __getitem__(self, idx):
         return self.sequence[idx]
-
 
 class CottonSequence():
     """Multiple Object Tracking Dataset.

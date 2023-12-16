@@ -2,11 +2,7 @@ import numpy as np
 from filterpy import stats
 from numpy import polyfit
 
-
-
-def get_consistent_loc_linear_in_pos_byte(trackers, neighbors,  n_neighbor):
-
-
+def get_consistent_loc_linear_in_pos_byte(trackers, neighbors, n_neighbor):
     gaussians = []
     neighbor_weight = []
     ev = 10
@@ -15,7 +11,7 @@ def get_consistent_loc_linear_in_pos_byte(trackers, neighbors,  n_neighbor):
         if id in trackers: # if neighbor detected in the recent  frame
             c, v = trackers[id].particle_filter.estimate()
             n_sample = len(relative_vecs)
-            if n_sample>1:
+            if n_sample > 1:
                 #n_sample =1
                 rv = np.array(relative_vecs)  # convert ot np array for easier indexing
                 neighbor_weight.append(np.sum(rv[:,0]))  # prioritize most recent neighbors with maximum number of history
@@ -37,12 +33,11 @@ def get_consistent_loc_linear_in_pos_byte(trackers, neighbors,  n_neighbor):
                 gaussians.append([ [c[0]+relative_vecs[0][1] , c[1]+relative_vecs[0][2] ],
                                    np.diag([100+v[0], 10+v[1]]) ])
 
-    if len(gaussians)<1:
+    if len(gaussians) < 1:
         return None, None
     n_neighbor = min(n_neighbor, len(neighbors))
     indx = np.argsort(neighbor_weight)[-n_neighbor:] # consider  most weighted n_neighbor
     gaussians = [gaussians[i] for i in indx]
-
 
     combined_meu, combined_cov = gaussians[0]
     combined_meu = np.array(combined_meu)

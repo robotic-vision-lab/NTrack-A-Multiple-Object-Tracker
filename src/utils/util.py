@@ -3,7 +3,6 @@ import yaml
 import os
 from sklearn.neighbors import NearestNeighbors
 
-
 def read_config(file_path):
     # parser = configargparse.YAMLConfigFileParser()
     # with open(file_path, "r") as stream:
@@ -18,7 +17,6 @@ def read_config(file_path):
     params['dir_location'] = params['dir_location'][machine]
     return params
 
-
 params = None#read_config("config/basic_config.yaml")
 
 def init_params(filepath):
@@ -31,7 +29,6 @@ def get_center_wh(bbox):
     x = bbox[0] + w / 2.
     y = bbox[1] + h / 2.
     return (x,y,w,h)
-
 
 def convert_bbox_to_z(bbox):
     """
@@ -46,7 +43,6 @@ def convert_bbox_to_z(bbox):
     s = w * h    #scale is just area
     r = w / float(h)
     return np.array([x, y, s, r]).reshape((4, 1))
-
 
 def convert_x_to_bbox(x,score=None):
     """
@@ -80,7 +76,6 @@ def translate_bbox(bbox, delta_vec):
     # center = (x,y) + delta_vec
     # return np.array([center[0]-w/2.,center[1]-h/2.,center[0]+w/2.,center[1]+h/2.])
 
-
 def convert_track_features_to_bbox(features, diplacement, prev_bbox):
     tracker_mean = np.squeeze(np.mean(features, axis=0))
     bbox_center = tracker_mean- diplacement
@@ -92,6 +87,7 @@ def convert_track_features_to_bbox(features, diplacement, prev_bbox):
     # # w, h = 100, 100
     # return np.array([tracker_mean[0] - w / 2., tracker_mean[1] - h / 2.,
     #                  tracker_mean[0] + w / 2., tracker_mean[1] + h / 2.]).reshape((1, 4))
+
 def frameid_to_imageid(frameseq2imgfile):
     frame2img = np.load(frameseq2imgfile, allow_pickle=True)
     return frame2img.item()
@@ -101,11 +97,3 @@ def nearest_neighbor(positions, query, n_neighbor=3):
     neigh.fit(positions)
     nbrs = neigh.kneighbors(query, n_neighbor, return_distance=False)
     return nbrs
-
-
-
-
-
-
-
-

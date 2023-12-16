@@ -2,13 +2,10 @@ import math
 import sys
 import time
 import torch
-
 import torchvision.models.detection.mask_rcnn
-
 from obj_det.coco_utils import get_coco_api_from_dataset
 from obj_det.coco_eval import CocoEvaluator
 import obj_det.utils as utils
-
 
 def train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq):
     model.train()
@@ -22,8 +19,6 @@ def train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq):
         warmup_iters = min(1000, len(data_loader) - 1)
 
         lr_scheduler = utils.warmup_lr_scheduler(optimizer, warmup_iters, warmup_factor)
-
-
 
     loss_dicts = []
     for images, targets in metric_logger.log_every(data_loader, print_freq, header):
@@ -63,7 +58,6 @@ def train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq):
 
     return loss_dicts
 
-
 def _get_iou_types(model):
     model_without_ddp = model
     if isinstance(model, torch.nn.parallel.DistributedDataParallel):
@@ -74,7 +68,6 @@ def _get_iou_types(model):
     if isinstance(model_without_ddp, torchvision.models.detection.KeypointRCNN):
         iou_types.append("keypoints")
     return iou_types
-
 
 @torch.no_grad()
 def evaluate(model, data_loader, device, iou_types=None):
