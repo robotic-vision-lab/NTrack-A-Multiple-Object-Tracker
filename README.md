@@ -2,16 +2,31 @@
 
 ### Overview
 
-### [Project Page]( https://robotic-vision-lab.github.io/ntrack/) | [Presentation](https://www.youtube.com/watch?v=VTUNa2EoG0U) | [Data]()
-In the paper we introduced NTrack, a new multiple object tracking framework that relies on
-the linear relationship between neighboring tracks. To guide each tracker, NTrack uses dense
-optical flow computation and particle filtering. NTrack establishs connections between object
-detections and existing tracks through data association using both direct observations and
-indirect cues. These associations are then combined to create an updated observation.
-<div align=center>
-    <img src='images/ntrack_pipeline.png'/>
-</div>
+In agriculture, automating the accurate tracking of fruits, vegetables, and
+fiber is a very tough problem. The issue becomes extremely challenging in
+dynamic field environments. Yet, this information is critical for making
+day-to-day agricultural decisions, assisting breeding programs, and much more.
 
+<p align="center">
+<img src="images/overview.png" alt="overview" width="400"/>
+</p>
+
+This repository provides source code for our 2023 IEEE Transactions on
+Automation Science and Engineering article titled "[NTrack: A Multiple-Object
+Tracker and Dataset for Infield Cotton Boll Counting]()." NTrack, is a multiple
+object tracking framework based on the linear relationship between the
+locations of neighboring tracks. It computes dense optical flow and utilizes
+particle filtering to guide each tracker. Correspondences between detections
+and tracks are found through data association via direct observations and
+indirect cues, which are then combined to obtain an updated observation. NTrack
+is independent of the underlying detection method, thus allowing for the
+interchangeable use of any off-the-shelf object detector.
+
+NTrack was created for the task of tracking and counting infield cotton bolls.
+To develop and test NTrack, we created TexCot22, an infield cotton boll video
+dataset. Each tracking sequence was collected from unique rows of an outdoor
+cotton crop research plot located in the High Plains region of Texas. More
+information can be found on the [NTrack website](https://robotic-vision-lab.github.io/ntrack).
 
 ## Setup
 
