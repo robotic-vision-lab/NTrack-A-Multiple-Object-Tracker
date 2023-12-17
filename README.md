@@ -8,7 +8,7 @@ dynamic field environments. Yet, this information is critical for making
 day-to-day agricultural decisions, assisting breeding programs, and much more.
 
 <p align="center">
-<img src="images/overview.png" alt="overview" width="400"/>
+  <img src="images/overview.png" alt="overview" width="400"/>
 </p>
 
 This repository provides source code for our 2023 IEEE Transactions on
@@ -26,9 +26,16 @@ NTrack was created for the task of tracking and counting infield cotton bolls.
 To develop and test NTrack, we created TexCot22, an infield cotton boll video
 dataset. Each tracking sequence was collected from unique rows of an outdoor
 cotton crop research plot located in the High Plains region of Texas. More
-information can be found on the [NTrack website](https://robotic-vision-lab.github.io/ntrack).
+information on the TexCot22 dataset can be found on the [NTrack
+website](https://robotic-vision-lab.github.io/ntrack).
 
-## Setup
+### NTrack Pipeline 
+
+<p align="center">
+  <img src="images/ntrack_pipeline.png" alt="model_architecture" width="800"/>
+</p>
+
+### Setup
 
 Python 3 dependencies:
     
@@ -44,7 +51,7 @@ Python 3 dependencies:
     * pysyaml
     * motmetrics
 
-## Setup environment
+### Setup environment
 
 To setup a conda environment:
 ```
@@ -52,8 +59,9 @@ conda create --name ntrack python=3.8.
 conda activate ntrack
 pip install -r requirements.txt
 ```
-## Setup data directory
-You can download the cot22 dataset from [here](). Unzip the data. The data folder should
+### Setup data directory
+
+You can download the TexCot22 dataset from [here](). Unzip the data. The data folder should
 have the following structure:
 
 ```
@@ -79,16 +87,4 @@ cot22_base/
 Here we show how to run our code on test data split.
 ```
 python ntrack.py --data_base_dir {your/data/dir/cot22_base} --data_split test --use_pf True
-```
-## Acknowledgement
-This repo is highly based on [ByteTrack](https://github.com/ifzhang/ByteTrack), thanks for their excellent work.
-
-## Citation
-
-```
-@article{ahmed2023ntrack,
-  author    = {Md Ahmed Al Muzaddid, William Beksi},
-  title     = {NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting},
-  journal   = {T-ASE},
-  year      = {2023}
 ```
