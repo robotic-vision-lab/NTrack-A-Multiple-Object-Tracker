@@ -29,6 +29,33 @@ cotton crop research plot located in the High Plains region of Texas. More
 information on the TexCot22 dataset can be found on the [NTrack
 website](https://robotic-vision-lab.github.io/ntrack).
 
+### Citation
+
+If you find this project useful, then please consider citing both our paper and
+dataset.
+
+```bibitex
+@article{muzaddid2023ntrack,
+  title={NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting},
+  author={Al Muzaddid, Md Ahmed and Beksi, William J},
+  journal={IEEE Transactions on Automation Science and Engineering},
+  volume={},
+  pages={},
+  doi={10.1109/TASE.2023.3342791},
+  year={2023}
+}
+
+@data{T8/5M9NCI_2023,
+  title={TexCot22},
+  author={Al Muzaddid, Md Ahmed and Beksi, William J},
+  publisher={Texas Data Repository},
+  version={DRAFT VERSION},
+  url={https://doi.org/10.18738/T8/5M9NCI}
+  doi={10.18738/T8/5M9NCI},
+  year={2023},
+}
+```
+
 ### NTrack Pipeline 
 
 <p align="center">
