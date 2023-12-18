@@ -45,7 +45,7 @@ dataset.
   year={2023}
 }
 
-@data{T8/5M9NCI_2023,
+@data{muzaddid2023texcot22,
   title={TexCot22},
   author={Al Muzaddid, Md Ahmed and Beksi, William J},
   publisher={Texas Data Repository},
