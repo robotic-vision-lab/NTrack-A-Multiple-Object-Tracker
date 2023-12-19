@@ -3,7 +3,6 @@ pycocotolls
 opencv
 tqdm
 tensorpack
-
 scikit-image
 scikit-learn
 filterpy
