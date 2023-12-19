@@ -13,18 +13,19 @@ day-to-day agricultural decisions, assisting breeding programs, and much more.
 
 This repository provides source code for our 2023 IEEE Transactions on
 Automation Science and Engineering article titled "[NTrack: A Multiple-Object
-Tracker and Dataset for Infield Cotton Boll Counting]()." NTrack, is a multiple
-object tracking framework based on the linear relationship between the
-locations of neighboring tracks. It computes dense optical flow and utilizes
-particle filtering to guide each tracker. Correspondences between detections
-and tracks are found through data association via direct observations and
-indirect cues, which are then combined to obtain an updated observation. NTrack
-is independent of the underlying detection method, thus allowing for the
-interchangeable use of any off-the-shelf object detector. NTrack was created
-for the task of tracking and counting infield cotton bolls. To develop and
-test NTrack, we created TexCot22, an infield cotton boll video dataset. Each
-tracking sequence was collected from unique rows of an outdoor cotton crop
-research plot located in the High Plains region of Texas. 
+Tracker and Dataset for Infield Cotton Boll
+Counting](https://arxiv.org/pdf/2312.10922.pdf)." NTrack, is a multiple object
+tracking framework based on the linear relationship between the locations of
+neighboring tracks. It computes dense optical flow and utilizes particle
+filtering to guide each tracker. Correspondences between detections and tracks
+are found through data association via direct observations and indirect cues,
+which are then combined to obtain an updated observation. NTrack is independent
+of the underlying detection method, thus allowing for the interchangeable use
+of any off-the-shelf object detector. NTrack was created for the task of
+tracking and counting infield cotton bolls. To develop and test NTrack, we
+created TexCot22, an infield cotton boll video dataset. Each tracking sequence
+was collected from unique rows of an outdoor cotton crop research plot located
+in the High Plains region of Texas. 
 
 More information on the project can be found on the 
 [NTrack website](https://robotic-vision-lab.github.io/ntrack).
