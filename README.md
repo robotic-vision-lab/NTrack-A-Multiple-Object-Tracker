@@ -49,10 +49,10 @@ dataset.
   title={TexCot22},
   author={Al Muzaddid, Md Ahmed and Beksi, William J},
   publisher={Texas Data Repository},
-  version={DRAFT VERSION},
-  url={https://doi.org/10.18738/T8/5M9NCI}
+  version={1},
+  url={https://doi.org/10.18738/T8/5M9NCI},
   doi={10.18738/T8/5M9NCI},
-  year={2023},
+  year={2023}
 }
 ```
 
@@ -62,34 +62,23 @@ dataset.
   <img src="images/ntrack_pipeline.png" alt="model_architecture" width="800"/>
 </p>
 
-### Setup
+### Installation 
 
-Python 3 dependencies:
-    
-    * argparse
-    * lap
-    * pycocotolls
-    * opencv
-    * tqdm
-    * tensorpack
-    * scikit-image
-    * scikit-learn
-    * filterpy
-    * pysyaml
-    * motmetrics
+First, begin by cloning the project
 
-### Setup environment
+    $ git clone https://github.com/robotic-vision-lab/NTrack-A-Multiple-Object-Tracker.git
+    $ cd NTrack-A-Multiple-Object-Tracker
 
-To setup a conda environment:
-```
-conda create --name ntrack python=3.8.
-conda activate ntrack
-pip install -r requirements.txt
-```
-### Setup data directory
+Next, create an environment and install the dependencies
 
-You can download the TexCot22 dataset from [here](). Unzip the data. The data folder should
-have the following structure:
+    $ conda create --name ntrack python=3.8.
+    $ conda activate ntrack
+    $ pip install -r requirements.txt
+
+### Dataset 
+
+Download and unzip the TexCot22 dataset from [here](). 
+The data folder has the following structure:
 
 ```
 cot22_base/
