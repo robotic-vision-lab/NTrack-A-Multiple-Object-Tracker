@@ -108,3 +108,6 @@ To run on a test data split, invoke the following command:
 
 [![license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/robotic-vision-lab/NTrack-A-Multiple-Object-Tracker/blob/main/LICENSE)
 
+### TexCot22 Dataset License
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
