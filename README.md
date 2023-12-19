@@ -64,12 +64,12 @@ dataset.
 
 ### Installation 
 
-First, begin by cloning the project
+First, begin by cloning the project:
 
     $ git clone https://github.com/robotic-vision-lab/NTrack-A-Multiple-Object-Tracker.git
     $ cd NTrack-A-Multiple-Object-Tracker
 
-Next, create an environment and install the dependencies
+Next, create an environment and install the dependencies:
 
     $ conda create --name ntrack python=3.8.
     $ conda activate ntrack
@@ -77,11 +77,10 @@ Next, create an environment and install the dependencies
 
 ### Dataset 
 
-Download and unzip the TexCot22 dataset from [here](). 
-The data folder has the following structure:
+Download and unzip the [TexCot22]() dataset. The data folder has the following structure:
 
 ```
-cot22_base/
+TexCot22-1/
     - train
         - vid14_02
         - vid23_04
@@ -98,9 +97,8 @@ cot22_base/
         - ...
 ```
 
-## Running code
+### Usage 
 
-Here we show how to run our code on test data split.
-```
-python ntrack.py --data_base_dir {your/data/dir/cot22_base} --data_split test --use_pf True
-```
+To run on a test data split, invoke the following command: 
+
+    $ python ntrack.py --data_base_dir {your/data/dir/TexCot22-1} --data_split test --use_pf True
