@@ -20,14 +20,14 @@ particle filtering to guide each tracker. Correspondences between detections
 and tracks are found through data association via direct observations and
 indirect cues, which are then combined to obtain an updated observation. NTrack
 is independent of the underlying detection method, thus allowing for the
-interchangeable use of any off-the-shelf object detector.
+interchangeable use of any off-the-shelf object detector. NTrack was created
+for the task of tracking and counting infield cotton bolls. To develop and
+test NTrack, we created TexCot22, an infield cotton boll video dataset. Each
+tracking sequence was collected from unique rows of an outdoor cotton crop
+research plot located in the High Plains region of Texas. 
 
-NTrack was created for the task of tracking and counting infield cotton bolls.
-To develop and test NTrack, we created TexCot22, an infield cotton boll video
-dataset. Each tracking sequence was collected from unique rows of an outdoor
-cotton crop research plot located in the High Plains region of Texas. More
-information on the TexCot22 dataset can be found on the [NTrack
-website](https://robotic-vision-lab.github.io/ntrack).
+More information on the project can be found on the 
+[NTrack website](https://robotic-vision-lab.github.io/ntrack).
 
 ### Citation
 
