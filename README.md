@@ -102,3 +102,9 @@ TexCot22-1/
 To run on a test data split, invoke the following command: 
 
     $ python ntrack.py --data_base_dir {your/data/dir/TexCot22-1} --data_split test --use_pf True
+
+
+### NTrack Source Code License
+
+[![license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/robotic-vision-lab/NTrack-A-Multiple-Object-Tracker/blob/main/LICENSE)
+
