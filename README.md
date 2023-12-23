@@ -78,9 +78,9 @@ Next, create an environment and install the dependencies:
 
 ### Dataset 
 
-Download and unzip the [TexCot22](https://doi.org/10.18738/T8/5M9NCI) dataset.
-TexCot22 consists of five zip files (TexCot22-[1-5]). Each data directory has
-the following structure:
+Download the [TexCot22](https://doi.org/10.18738/T8/5M9NCI) dataset
+directories. TexCot22 consists of five zip files (TexCot22-[1-5]). Each data
+directory has the following structure:
 
 ```
 TexCot22-X/
