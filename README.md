@@ -84,24 +84,26 @@ directory has the following structure:
 
 ```
 TexCot22-X/
-    - train
-        - img1
-          - 0001.jpg
-          - 0002.jpg
-          - ...
-        - det
-          - det.txt
-        - gt
-          - gt.txt 
-    - test
-        - img1 
-          - 0001.jpg
-          - 0002.jpg
-          - ...
-        - det
-          - det.txt
-        - gt
-          - gt.txt
+  - train
+    - vid
+      - img1
+        - 0001.jpg
+        - 0002.jpg
+        - ...
+      - gt
+        - gt.txt
+    - ... 
+  - test
+    - vid
+      - img1
+        - 0001.jpg
+        - 0002.jpg
+        - ...
+      - det
+        - det.txt
+      - gt
+        - gt.txt
+    - ...
 ```
 
 ### Usage 
