@@ -38,22 +38,22 @@ dataset.
 ```bibitex
 @article{muzaddid2023ntrack,
   title={NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting},
-  author={Al Muzaddid, Md Ahmed and Beksi, William J},
+  author={Muzaddid, Md Ahmed Al and Beksi, William J},
   journal={IEEE Transactions on Automation Science and Engineering},
   volume={},
-  pages={},
+  pages={1--13},
   doi={10.1109/TASE.2023.3342791},
   year={2023}
 }
 
-@data{muzaddid2023texcot22,
+@data{T8/5M9NCI_2024,
   title={TexCot22},
-  author={Al Muzaddid, Md Ahmed and Beksi, William J},
+  author={Muzaddid, Md Ahmed Al and Beksi, William J},
   publisher={Texas Data Repository},
-  version={1},
+  version={V1},
   url={https://doi.org/10.18738/T8/5M9NCI},
   doi={10.18738/T8/5M9NCI},
-  year={2023}
+  year={2024}
 }
 ```
 
