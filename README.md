@@ -41,6 +41,7 @@ dataset.
   author={Muzaddid, Md Ahmed Al and Beksi, William J},
   journal={IEEE Transactions on Automation Science and Engineering},
   volume={},
+  number={},
   pages={1--13},
   doi={10.1109/TASE.2023.3342791},
   year={2023}
@@ -50,7 +51,7 @@ dataset.
   title={TexCot22},
   author={Muzaddid, Md Ahmed Al and Beksi, William J},
   publisher={Texas Data Repository},
-  version={V1},
+  version={V2},
   url={https://doi.org/10.18738/T8/5M9NCI},
   doi={10.18738/T8/5M9NCI},
   year={2024}
