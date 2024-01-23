@@ -78,9 +78,10 @@ Next, create an environment and install the dependencies:
 
 ### Dataset 
 
-Download the [TexCot22](https://doi.org/10.18738/T8/5M9NCI) dataset
-directories. TexCot22 consists of five ZIP files (TexCot22-[1-5]). Each data
-directory has the following structure:
+Download the [TexCot22](https://doi.org/10.18738/T8/5M9NCI) dataset files.
+TexCot22 consists of five ZIP files for tracking (TexCot22-[1-5]). Each ZIP file
+contains training and testing sequences, ground-truth bounding boxes, and the
+detections. The dataset directories have the following structure:
 
 ```
 TexCot22-X/
@@ -106,11 +107,12 @@ TexCot22-X/
     - ...
 ```
 
-Additionally, there are four ZIP files (TexCot22_Detection-1_1.zip, TexCot22_Detection-1_2.zip, TexCot22_Detection-2_1.zip,
-TexCot22_Detection-2_2.zip ) to train any off-the-shelf cotton boll detector. Unzip TexCot22_Detection-x_1.zip and TexCot22_Detection-x_2.zip 
-into the same directory and merge two img folders into one. frameid_to_imgfile.npy file contains the mapping from the frameid
- (1st column in detection.csv) to the image name in the img folder. 
-  
+In addition, there are four ZIP files (TexCot22_Detection-1_[1-2],
+TexCot22_Detection-2_[1-2]), which can be used to train a detection model.  To
+train an off-the-shelf object detector, unzip TexCot22_Detection-X_1.zip and
+TexCot22_Detection-X_2.zip into the same directory and then merge the two img
+directories into one. The file frameid_to_imgfile.npy contains the mapping from
+the frameid (1st column in detection.csv) to the image name in the img folder. 
 
 ### Usage 
 
