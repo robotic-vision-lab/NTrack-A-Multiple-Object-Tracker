@@ -106,6 +106,12 @@ TexCot22-X/
     - ...
 ```
 
+Additionally, there are four ZIP files (TexCot22_Detection-1_1.zip, TexCot22_Detection-1_2.zip, TexCot22_Detection-2_1.zip,
+TexCot22_Detection-2_2.zip ) to train any off-the-shelf cotton boll detector. Unzip TexCot22_Detection-x_1.zip and TexCot22_Detection-x_2.zip 
+into the same directory and merge two img folders into one. frameid_to_imgfile.npy file contains the mapping from the frameid
+ (1st column in detection.csv) to the image name in the img folder. 
+  
+
 ### Usage 
 
 To run on a test data split, invoke the following command: 
