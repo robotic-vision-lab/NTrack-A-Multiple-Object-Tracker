@@ -48,7 +48,7 @@ dataset.
 }
 
 @data{T8/5M9NCI_2024,
-  title={TexCot22},
+  title={{TexCot22}},
   author={Muzaddid, Md Ahmed Al and Beksi, William J},
   publisher={Texas Data Repository},
   version={V2},
