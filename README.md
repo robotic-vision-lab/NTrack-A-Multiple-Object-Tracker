@@ -36,15 +36,15 @@ If you find this project useful, then please consider citing both our paper and
 dataset.
 
 ```bibitex
-@article{muzaddid2023ntrack,
+@article{muzaddid2024ntrack,
   title={NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting},
   author={Muzaddid, Md Ahmed Al and Beksi, William J},
   journal={IEEE Transactions on Automation Science and Engineering},
-  volume={},
-  number={},
-  pages={1--13},
+  volume={21},
+  number={9},
+  pages={7452--7464},
   doi={10.1109/TASE.2023.3342791},
-  year={2023}
+  year={2024}
 }
 
 @data{T8/5M9NCI_2024,
